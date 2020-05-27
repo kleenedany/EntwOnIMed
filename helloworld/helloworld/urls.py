@@ -18,6 +18,8 @@ from django.urls import include, path
 
 urlpatterns = [
     # Notwendige Argumente: Route und View
+    path('login/', include('login.urls')),
+    path('genericviews/', include('genericviews.urls')),
     path('functions/', include('functions.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form View</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    {% load static %}
+    <link rel= "stylesheet" type="text/css" href="{% static 'functions/css/bootstrap.min.css' %}">
+    <script src="{% static 'functions/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <a href="{% url 'genericviews:index' %}"> Index View </a>
+
+    <div class="jumbotron text-center">
+        <h1>Personen</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <!-- form.as_table | form.as_ul -->
+                    {{ form.as_p }}
+                    <input type="submit" value="Speichern">
+                </form>
+            
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
