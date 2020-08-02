@@ -12,5 +12,10 @@ from .forms import LoginForm
 
 class IndexView(LoginView):
     template_name = 'login/index.html'
-    #form_class = LoginForm
-    
+   # form = LoginForm()
+    #redirect_field_name = 'login:index'
+    authentication_form= LoginForm
+
+class WelcomeView(generic.ListView):
+    model = User
+    template_name = 'login/welcome.html'
